@@ -1,0 +1,203 @@
+{
+  "intents": [
+    {
+      "class": "noanswer",
+      "patterns": [
+        "",
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z",
+        "apa itu",
+        "saya",
+        "internet",
+        "saya ingin",
+        "sampai",
+        "terima",
+        "kartu atm",
+        "berapa persen",
+        "selamat",
+        "bank ini",
+        "bagaimana cara",
+        "yang dimaksud",
+        "banking"
+      ],
+      "responses": [
+        "Maaf , Saya Tidak Dapat Mengerti Pertanyaanmu",
+        "Tolong Beri Lebih Banyak Info",
+        "Saya Tidak Mengerti, tolong beri lebih banyak info"
+      ]
+    },
+    {
+      "class": "salam",
+      "patterns": [
+        "Hi",
+        "Halo",
+        "Apa Kabar",
+        "Hey",
+        "Hola",
+        "Hello",
+        "Apakah Ada Seseorang Disini",
+        "Pagi",
+        "Siang",
+        "Sore",
+        "Malam",
+        "tolong",
+        "helo",
+        "help",
+        "bantu",
+        "bantu saya"
+      ],
+      "responses": ["Halo, Ada Yang Bisa Saya Bantu ?", "Halo, Saya Disini"]
+    },
+    {
+      "class": "selamattinggal",
+      "patterns": [
+        "Bye",
+        "Selamat Tinggal",
+        "Goodbye",
+        "Bai",
+        "Sampai Jumpa",
+        "Senang berkomunikasi dengan anda"
+      ],
+      "responses": ["Sampai Jumpa", "Semoga Harimu Baik", "Bye! Sampai Jumpa "]
+    },
+    {
+      "class": "terimakasih",
+      "patterns": [
+        "Thanks",
+        "Thank you",
+        "Terima Kasih",
+        "Sangan Membantu",
+        "Terima Kasih Sudah Membantu"
+      ],
+      "responses": ["Senang Membantu Anda !", "Sama sama"]
+    },
+    {
+      "class": "bankdefinition",
+      "patterns": [
+        "Apa Itu Bank",
+        "Apa Pengertian Bank",
+        "Apa Yang Dimaksud Bank"
+      ],
+      "responses": [
+        "sebagai badan usaha yang menghimpun dana dari masyarakat dalam bentuk simpanan dan menyalurkannya kepada masyarakat dalam bentuk kredit dan atau bentuk-bentuk lainnya dalam rangka meningkatkan taraf hidup masyarakat."
+      ]
+    },
+    {
+      "class": "loandefinition",
+      "patterns": [
+        "Apa itu Loan",
+        "Apa Itu Pinjaman",
+        "Apa itu Pinjaman bank",
+        "apa itu loan bank"
+      ],
+      "responses": [
+        "dana yang diberikan dari kreditur kepada nasabahnya dengan status hutang."
+      ]
+    },
+    {
+      "class": "contact",
+      "patterns": [
+        "Contact",
+        "Social Media",
+        "Kontak yang bisa dihubungi",
+        "sosial media",
+        "sosial",
+        "social",
+        "kontak",
+        "info",
+        "pic"
+      ],
+      "responses": [
+        "Kamu dapat menghubungi ke nomor berikut : 081618944924(WA) , Untuk sosial media kami memiliki instagram : PtXYZ"
+      ]
+    },
+    {
+      "class": "ask1",
+      "patterns": [
+        "Kartu atm terblokir",
+        "Kartu atm hilang",
+        "Kartu atm rusak",
+        "mesin atm tidak bisa mendeteksi kartu saya"
+      ],
+      "responses": [
+        "Kamu dapat datang ke kantor Cabang kami jika terdapat masalah terhadap kartu atm anda atau Cukup Menghubungi Nomor Berikut : 081617944925(WA) berdasarkan keluhan dan semuanya dilakukan secara online"
+      ]
+    },
+    {
+      "class": "ask2",
+      "patterns": [
+        "saya ingin buka rekening",
+        "Bagaimana melakukan pembukaan rekening pada bank ini",
+        "saya ingin melakukan pembukaan rekening",
+        "saya ingin membuka rekening",
+        "Saya tidak memiliki KTP apakah saya bisa membuka rekening bank",
+        "Saya masih berumur dibawah 17 tahun apakah saya bisa membuka rekening bank",
+        "Pembukaan rekening untuk anak dibawah 17 tahun",
+        "Saya masih pelajar apakah saya bisa membuka rekening bank",
+        "Cara pembukaan rekening untuk pelajar",
+        "saya tidak memiliki KTP, tapi saya ingin buka rekening"
+      ],
+      "responses": [
+        "Kamu dapat melakukan pembukaan rekening bank dengan cara datang kekantor cabang, atau mengakses website kami. jika kamu masih belum berumur 17 tahun dengan cara menggunakan kartu identitas orang tuamu"
+      ]
+    },
+    {
+      "class": "ask3",
+      "patterns": [
+        "Saya ingin mendaftar internet banking",
+        "Bagaimana cara untuk mendaftarkan internet banking",
+        "Cara mendaftar internet banking"
+      ],
+      "responses": [
+        "Kamu dapat mendaftar internet banking dengan datang kantor cabang atau mendaftar secara online di website kami atau juga dapat menghubungi nomor berikut : 081617944925(WA)"
+      ]
+    },
+    {
+      "class": "ask4",
+      "patterns": [
+        "Saya ingin mengajukan kartu kredit",
+        "Bagaimana cara mengajukan kartu kredit"
+      ],
+      "responses": [
+        "Kamu bisa mengajukan kartu kredit, dengan datang ke kantor cabang dengan membawa kartu identitas penduduk dan harus berumur 21 tahun"
+      ]
+    },
+
+    {
+      "class": "ask5",
+      "patterns": ["Persen bunga deposito", "Tentang deposito"],
+      "responses": ["Bunga deposito pada bank ini sebesar 1% per bulannya"]
+    },
+    {
+      "class": "ask6",
+      "patterns": ["Dimana letak kantor cabang PT XYZ"],
+      "responses": [
+        "Saat ini kantor cabang PT XYZ hanya berada di Jakarta Utara Penjaringan"
+      ]
+    }
+  ]
+}

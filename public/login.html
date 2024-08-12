@@ -1,0 +1,64 @@
+<html>
+<head>
+    <title>Finpro Project</title>
+    <link rel="stylesheet" href="./style/login.css">
+</head>
+
+<body>
+	<div class="response-text"">
+		{{ message }}
+	</div>
+    <div class="container">
+        <div class="row login-left-image">
+            <img src="https://images.unsplash.com/photo-1533421644343-45b606745fb1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGJhbmt8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60"  alt="img" class="img"/>
+        </div>
+        <div class="row">
+            <div class= "form active" id="login">
+                <form action="/login" method="POST">
+                    <h2>Login</h2>
+                    <hr class="header-line">
+                    <label for="username">Username</label>
+                    <div class="pass-reset">
+                        <input type="text" name="username" class="email" id="emailInput" placeholder="Username">
+                    </div>
+                    <label for="password">Password</label>
+                    <div class="pass-reset">
+                        <input type="password" name="password" class="password" id="password" placeholder="Password">
+                    </div>
+                    <button class="btn btn-login">Login</button>
+                    <p>Don't have an account? <a id="changeToRegister">Sign up</a></p>
+                    <a href="/forgot-password">Forgot Password?</a>
+                    <p class="or">or</p>
+                </form>
+                <form action="/google" method="GET">
+                    <button class="btn btn-gogle-auth"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFFUTi1RsVDFSupmzDUJ5I3ZHBtwz043rbHQ&usqp=CAU" class="google-image"><span class="login-google-button-text">Authorize with Google</span></button>
+                </form>
+            </div>
+
+            <form action="/register" class="form" id="register" Method="POST">
+                <h2>Register</h2>
+                <hr class="header-line">
+                <label for="username">Username</label>
+                <div class="pass-reset">
+                    <input type="text" name="username" class="email" id="emailInput" placeholder="Username" minlength="5" required>
+                </div>
+                <label for="email">Email</label>
+                <div class="pass-reset">
+                    <input type="email" name="email" class="email" placeholder="email" required>
+                </div>
+                <label for="password">Password</label>
+                <div class="pass-reset">
+                    <input type="password" class="password" name="password" id="password" placeholder="Password" minlength="5" required>
+                </div>
+                <button class="btn btn-login" id ="register">Register</button>
+                <p>Already have an account? <a id="changeToLogin">Login</a></p>
+                <p class="ors"></p> 
+            </form>
+        </div>
+    </div>
+
+    
+    <script src="./style/login.js"></script>
+</body>
+
+</html>

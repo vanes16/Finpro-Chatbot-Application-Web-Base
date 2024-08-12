@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- ICON -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="./style/admin.css">
+	<title>Finpro Project</title>
+</head>
+<body>
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+
+		<ul class="side-menu top">
+			<li>
+				<a href="/admin-index">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a href="/admin-slider">
+					<i class='bx bxs-slideshow' ></i>
+					<span class="text">Slider Content</span>
+				</a>
+			</li>
+			<li>
+				<a href="/admin-promo">
+					<i class='bx bxs-discount' ></i>
+					<span class="text">Promo Content</span>
+				</a>
+			</li>
+			<li class="active">
+				<a href="/admin-content">
+					<i class='bx bxs-news' ></i>
+					<span class="text">News Content</span>
+				</a>
+			</li>
+			<li>
+				<a href="/admin-about">
+					<i class='bx bxs-stopwatch' ></i>
+					<span class="text">About Content</span>
+				</a>
+			</li>
+			<li>
+				<a href="/admin-monitor">
+					<i class='bx bxs-bot' ></i>
+					<span class="text">Chatbot Monitoring</span>
+				</a>
+			</li>
+			<li>
+				<a href="/">
+					<i class='bx bxs-home' ></i>
+					<span class="text">Back To Homepage</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+			<li>
+				<a href="/logout" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text" >Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+	
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<span class="nav-link">Hello, {{name}}</span>
+			<form method="POST">
+				<input type="checkbox" id="switch-mode" hidden>
+				<label for="switch-mode" class="switch-mode"></label>
+			</form>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>News Content</h1>
+					<ul class="breadcrumb">
+						<li>
+							<p>News Content</p>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="/admin-content"">Home</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+        {% if get_flashed_messages() %}
+            <div class="flash-alert">
+                {% for message in get_flashed_messages() %}
+                    <div>{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+			<!-- Content -->
+			<div class="table-data">
+				<div class="order">
+					<div class="head">
+						<h3>News Content</h3><br>
+                        <a href="{{ url_for('news_add') }}" class="status-add">Add</a>
+					</div>
+					<table>
+						<thead>
+							<tr>
+								<th>Admin ID </th>
+								<th>Title</th>
+								<th>Content</th>
+								<th>Image</th>
+                                <th>Created Date</th>
+                                <th>Actions</th>
+							</tr>
+						</thead>
+						<tbody>
+						{% for newscontent in news %}
+							<tr>
+								<td>
+									{{newscontent.admin_id}}
+								</td>
+								<td>
+									{{ newscontent.title }}
+								</td>
+								<td>
+									<p>{{ newscontent.content }}</p>
+								</td>
+								<td>
+									<img src="{{newscontent.filename}}" class="image-db"/>
+								</td>
+								<td>
+									<p>{{ newscontent.created_date }}</p>
+								</td>
+                                <td>
+                                    <a href="{{ url_for('news_edit', id=newscontent.id) }}" class="status edit">Edit</a>
+                                    <a href="{{ url_for('news_delete', id=newscontent.id) }}" class="status delete" onclick="return confirm('Are you sure to delete?')">Delete</a>
+                                </td>
+							</tr>
+						{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</main>
+	</section>
+	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="./style/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- ICON -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="./style/admin.css">
+	<title>Finpro Project</title>
+</head>
+<body>
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+
+		<ul class="side-menu top">
+			<li>
+				<a href="/admin-index">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a href="/admin-slider">
+					<i class='bx bxs-slideshow' ></i>
+					<span class="text">Slider Content</span>
+				</a>
+			</li>
+			<li class="active">
+				<a href="/admin-promo">
+					<i class='bx bxs-discount' ></i>
+					<span class="text">Promo Content</span>
+				</a>
+			</li>
+			<li>
+				<a href="/admin-content">
+					<i class='bx bxs-news' ></i>
+					<span class="text">News Content</span>
+				</a>
+			</li>
+			<li>
+				<a href="/admin-about">
+					<i class='bx bxs-stopwatch' ></i>
+					<span class="text">About Content</span>
+				</a>
+			</li>
+			<li>
+				<a href="/admin-monitor">
+					<i class='bx bxs-bot' ></i>
+					<span class="text">Chatbot Monitoring</span>
+				</a>
+			</li>
+			<li>
+				<a href="/">
+					<i class='bx bxs-home' ></i>
+					<span class="text">Back To Homepage</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+			<li>
+				<a href="/logout" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text" >Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+	
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<span class="nav-link">Hello, {{name}}</span>
+			<form method="POST">
+				<input type="checkbox" id="switch-mode" hidden>
+				<label for="switch-mode" class="switch-mode"></label>
+			</form>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Promo Content</h1>
+					<ul class="breadcrumb">
+						<li>
+							<p>Promo Content</p>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="/admin-promo"">Home</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+        {% if get_flashed_messages() %}
+            <div class="flash-alert">
+                {% for message in get_flashed_messages() %}
+                    <div>{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+			<!-- Content -->
+			<div class="table-data">
+				<div class="order">
+					<div class="head">
+						<h3>Promo Content Edit</h3>
+					</div>
+					<table>
+						<thead>
+							<tr>
+								<th>Admin ID</th>
+								<th>Image</th>
+								<th>Updated Date</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+						<tbody>
+						{% for promocontent in promo %}
+							<tr>
+								<td>
+									<p>{{promocontent.admin_id}}</p>
+								</td>
+								<td>
+									<img src="{{promocontent.filename}}" class="image-db"/>
+								</td>
+								<td>
+									<p>{{promocontent.updated_date}}</p>
+								</td>
+                                <td>
+                                    <a href="{{ url_for('promo_edit', id=promocontent.id) }}" class="status edit">Edit</a>
+                                </td>
+							</tr>
+						{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</main>
+	</section>
+		
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="./style/admin.js"></script>
+</body>
+</html>
